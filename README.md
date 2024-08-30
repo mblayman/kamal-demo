@@ -26,6 +26,11 @@ How does Kamal work?
 4. `kamal init`
 5. Starting to configure in `config/deploy.yml`
 6. Tried `kamal deploy`. Failed at registry login.
+7. Created personal access token on Docker Hub.
+8. Tried `kamal deploy` again. Timed out on server at 192.168.0.1. Shocker.
+9. Tried `kamal build push`. Failed to find a Dockerfile.
+10. Pulled Django Dockerfile from ChatGPT.
+11. Tried `kamal build push`. Builder failed to find Dockerfile.
 
 
 # Kamal notes
