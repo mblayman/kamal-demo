@@ -33,6 +33,9 @@ How does Kamal work?
 11. Tried `kamal build push`. Builder failed to find Dockerfile.
 12. Commit `Dockerfile`.
 13. Missing `requirements.txt`. Created simple one and committed.
+14. `kamal build push` failed to deliver image to Docker Hub. Failed with: #16 ERROR: failed to push mblayman/kamal-demo:a3ef52a9f9b3d19f49f9814cb4ccb636328bdd1a: push access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+15. In Docker Hub, make `kamal-demo` repository.
+16. Still failed to push image to Docker Hub.
 
 
 # Kamal notes
