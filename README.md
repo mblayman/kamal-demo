@@ -31,6 +31,8 @@ How does Kamal work?
 9. Tried `kamal build push`. Failed to find a Dockerfile.
 10. Pulled Django Dockerfile from ChatGPT.
 11. Tried `kamal build push`. Builder failed to find Dockerfile.
+12. Commit `Dockerfile`.
+13. Missing `requirements.txt`. Created simple one and committed.
 
 
 # Kamal notes
