@@ -5,7 +5,8 @@ image: mblayman/kamal-demo
 
 # Deploy to these servers.
 servers:
-  - 192.168.0.1
+  web:
+    - 165.227.94.23
 
 # Credentials for your image host.
 registry:
@@ -39,11 +40,15 @@ registry:
 #     arch: amd64
 #     host: ssh://app@192.168.0.1
 
+volumes:
+ - "db:/var/db"
 # Use accessory services (secrets come from .env).
-accessories:
-  sqlite:
-    directories:
-      - db:/var/db
+# accessories:
+#   sqlite:
+#     directories:
+#       - db:/var/db
+#     roles:
+#       - web
 #     image: mysql:8.0
 #     host: 192.168.0.2
 #     port: 3306

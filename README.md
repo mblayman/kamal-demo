@@ -45,3 +45,4 @@ How does Kamal work?
 
 * Traefik container - proxy that enables zero-downtime deploys
   (switches applications seemlessly when deploying)
+* What's up with the permissions on directories? What should root-owned vs not?
