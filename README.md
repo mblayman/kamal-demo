@@ -46,3 +46,4 @@ How does Kamal work?
 * Traefik container - proxy that enables zero-downtime deploys
   (switches applications seemlessly when deploying)
 * What's up with the permissions on directories? What should root-owned vs not?
+* If using the top-level `volumes` key, where can we create the volume host directory?
