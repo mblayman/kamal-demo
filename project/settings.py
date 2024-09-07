@@ -27,7 +27,8 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = []
+# Should be something like '.example.com', punting to the wildcard instead.
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
