@@ -22,6 +22,7 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
   clear:
+    DB_DIR: /var/db
     DEBUG: False
   secret:
     - SECRET_KEY
