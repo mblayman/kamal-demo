@@ -4,6 +4,7 @@ FROM python:3.12-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV UV_PROJECT_ENVIRONMENT=/usr/local
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -18,10 +19,10 @@ WORKDIR /app
 RUN addgroup --system app && adduser --system --group app
 
 # Copy the requirements file to the container
-COPY --chown=app:app requirements.txt /app/
+COPY --chown=app:app pyproject.toml uv.lock /app/
 
 # Install dependencies
-RUN uv pip install --system -r requirements.txt
+RUN uv sync --frozen
 
 # Copy the Django project code to the container
 COPY --chown=app:app . /app/
