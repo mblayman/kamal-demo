@@ -16,8 +16,8 @@ COPY --from=ghcr.io/astral-sh/uv:0.4.7 /uv /bin/uv
 # Set the working directory
 WORKDIR /app
 
-RUN addgroup --gid 101 --system app \
-    && adduser --uid 101 --system --group app
+RUN addgroup --gid 222 --system app \
+    && adduser --uid 222 --system --group app
 
 # Copy the requirements file to the container
 COPY --chown=app:app pyproject.toml uv.lock /app/

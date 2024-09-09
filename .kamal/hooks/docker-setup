@@ -1,4 +1,32 @@
 #!/usr/bin/env bash
 
-echo "Hello from docker-setup script"
-echo "${KAMAL_HOSTS}"
+# Split the KAMAL_HOSTS by commas and loop through each IP
+IFS=',' read -ra HOSTS <<< "$KAMAL_HOSTS"
+for HOST in "${HOSTS[@]}"; do
+  echo "Connecting to $HOST"
+
+  ssh root@"$HOST" "
+    # Create the system group 'app' if it doesn't exist
+    if ! getent group app > /dev/null 2>&1; then
+      groupadd --gid 222 --system app
+      echo 'System group app created with GID 222'
+    else
+      echo 'System group app already exists'
+    fi
+
+    # Create the system user 'app' if it doesn't exist
+    if ! id --user app > /dev/null 2>&1; then
+      useradd --uid 222 --gid app --system app
+      echo 'System user app created with UID 222'
+    else
+      echo 'System user app already exists'
+    fi
+
+    # Create the directory /var/db if it doesn't exist
+    mkdir --parents /var/db
+
+    # Change ownership of /var/db to app user and group
+    chown --recursive app:app /var/db
+    echo '/var/db ownership changed to app:app'
+  "
+done
