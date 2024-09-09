@@ -42,7 +42,7 @@ env:
 #     host: ssh://app@192.168.0.1
 
 volumes:
- - "db:/var/db"
+ - "/var/db:/var/db"
 # Use accessory services (secrets come from .env).
 # accessories:
 #   sqlite:
