@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Hello from docker-setup script"
+echo "${KAMAL_HOSTS}"
